@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Radius!</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Poppins;
+            background-color: #0B0C10;
+        }
+        table{
+            border-spacing: 0;
+        }
+        td{
+            padding: 0;
+        }
+        img{
+            padding: 0;
+        }
+        .wrappers{
+            width: 100%;
+            table-layout: fixed;
+            background-color: #0B0C10;
+            padding: 40px 0px 40px 0px;
+        }
+        .mail-wrapper{
+            max-width: 600px;
+            background-color: #1D252F;
+        }
+        .mail{
+            width: 100%;
+            margin: 0 auto;
+            max-width: 600px;
+            border-spacing: 0;
+            
+        }
+        .title{
+            font-size: 30px;
+            font-weight: 600;
+            color: #45A29E;
+            margin: 0;
+            margin-left: 20px;
+            padding: 0;
+        }
+        .content{
+            width: 550px;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            margin-left: 20px;
+            padding: 0;
+            color: #45A29E;
+        }
+        .plan-button{
+            /* all: unset; */
+            font-family: Poppins;
+            font-size: 20px;
+            font-weight: 500;
+            background-color: #45A29E;
+            color: #0B0C10;
+            border-radius: 5px;
+            margin: 0px;
+            border: 0px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .plan-button:hover{
+            background-color: #69FCF2;
+        }
+
+        @media screen and (max-width: 600px) {
+        }
+        @media screen and (max-width: 400px){
+            .wrappers{
+                padding: 0px;
+            }
+            .content{
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center class="wrappers">
+        <div class="mail-wrapper">
+            <table class="mail" align="center">
+                <tr>
+                    <td>
+                        <table width="100%">
+                            <tr>
+                                <td style="padding: 10px;text-align: left;">
+                                    <div class="logo" style="display: flex;margin: 20px;">
+                                        <img src="{% static './img/header-logo.png' %}" alt="">
+                                    </div>    
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <h2 class="title" >Welcome to Radius!</h2>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <p class="content" style="margin-bottom: 10px;">
+                                        Hi {{user.username}},
+                                    </p>
+                                    <p class="content">
+                                        Welcome to Radius! Your registration is complated and you're ready to start watching movies and TV shows.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <p class="content">
+                                        Don't forget to select the subscription plan:
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <a class="plan-link content"><button class="plan-button">Select a Plan</button></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <p class="content">
+                                        Thank you for creating a Radius account!
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <p class="content">
+                                        Thanks for using our site!
+                                    </p>
+                                    <p class="content" style="margin-bottom: 20px;">
+                                        The Radius team
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </center>
+</body>
+</html>

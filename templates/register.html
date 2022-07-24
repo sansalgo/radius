@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radius</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    
+    <!-- favicons generics -->
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-192.png' %}" sizes="192x192">
+
+    <!-- favicon android -->
+    <link rel="shortcut icon" type="image/png" href="{% static './icon/favicon-196.png' %}" sizes="196x196">
+
+    <!-- favicons iso -->
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-167.png' %}" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-180.png' %}" sizes="180x180">
+
+</head>
+<body>
+
+    <!-- register form -->
+    <section class="auth-cover">
+        <form class="auth-2" name="register" method="POST" onsubmit="return checkRegister()" novalidate>
+            {% csrf_token %}
+            <div class="logo">
+                <span>
+                    <a href="{% url 'base:home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="154" height="83" viewBox="0 0 154 83">
+                        <rect id="footer-logo" width="142" height="71" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="12"/>
+                    </svg></a>
+                </span>                                  
+            </div>
+            
+            <div class="username">
+                <!--<input type="text" name="username" id="Username" placeholder="Username" autocomplete="off"> -->
+                {{form.username}}
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="155.689" height="21.868" viewBox="0 0 155.689 21.868">
+                        <path id="arrow" d="M12.518,3.361,6.865,8.948l146.869.077A1.963,1.963,0,0,1,155.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" transform="translate(0)" fill="#50fff9"/>
+                      </svg>                      
+                </div>
+                <div class="message"></div>
+            </div>
+            <div class="email">
+                <!-- <input type="email" name="email" placeholder="Email" autocomplete="off">  -->
+                {{form.email}}
+                <div class="message"></div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="155.689" height="21.868" viewBox="0 0 155.689 21.868">
+                        <path id="arrow" d="M12.518,3.361,6.865,8.948l146.869.077A1.963,1.963,0,0,1,155.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" transform="translate(0)" fill="#50fff9"/>
+                      </svg>                      
+                </div>
+            </div>
+            <div class="password1">
+                <!--<input type="password" name="password1" placeholder="Password" autocomplete="off"> -->
+                {{form.password1}}
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="155.689" height="21.868" viewBox="0 0 155.689 21.868">
+                        <path id="arrow" d="M12.518,3.361,6.865,8.948l146.869.077A1.963,1.963,0,0,1,155.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" transform="translate(0)" fill="#50fff9"/>
+                      </svg>                      
+                </div>
+                <div class="message"></div>
+                <div class="toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                        <circle id="toggle" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#50fff9" stroke-width="4"/>
+                      </svg>                      
+                </div>
+                <div class="right-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25.689" height="21.868" viewBox="0 0 25.689 21.868">
+                        <path id="back" d="M12.518,3.361,6.865,8.948l16.869.077A1.963,1.963,0,0,1,25.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" fill="#50fff9"/>
+                      </svg>                                            
+                </div>
+            </div>
+            <div class="password2">
+                <!--<input type="password" name="password2" placeholder="Password" autocomplete="off"> -->
+                {{form.password2}}
+                <div class="message"></div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="155.689" height="21.868" viewBox="0 0 155.689 21.868">
+                        <path id="arrow" d="M12.518,3.361,6.865,8.948l146.869.077A1.963,1.963,0,0,1,155.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" transform="translate(0)" fill="#50fff9"/>
+                      </svg>                      
+                </div>
+                <div class="left-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25.689" height="21.868" viewBox="0 0 25.689 21.868">
+                        <path id="back" d="M12.518,3.361,6.865,8.948l16.869.077A1.963,1.963,0,0,1,25.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" fill="#50fff9"/>
+                      </svg>                                            
+                </div>
+                <div class="toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                        <circle id="toggle" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#50fff9" stroke-width="4"/>
+                      </svg>                      
+                </div>
+            </div>
+            <div class="checkbox">
+                <div class="message"></div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="155.689" height="21.868" viewBox="0 0 155.689 21.868">
+                        <path id="arrow" d="M12.518,3.361,6.865,8.948l146.869.077A1.963,1.963,0,0,1,155.689,11h0a1.963,1.963,0,0,1-1.974,1.954L6.85,12.878l5.578,5.644a1.963,1.963,0,0,1-.011,2.778h0a1.967,1.967,0,0,1-2.78-.013L.463,12.023A1.613,1.613,0,0,1,.482,9.742L9.753.569A1.965,1.965,0,0,1,12.53.581h0a1.965,1.965,0,0,1-.013,2.78Z" transform="translate(0)" fill="#50fff9"/>
+                      </svg>                      
+                </div>
+                <input type="checkbox" name="p-and-t" id="p-and-t">
+                <label for="p-and-t">I agree all T&C</label>
+            </div>
+            <div class="login"><button type="submit">Register</button></div>
+            <hr>
+            <div class="log">Already have an account?&nbsp;<a href="{% url 'user:login' %}">Login!</a></div>
+        </form>
+    </section>
+    <!-- end register form -->
+
+
+    <!-- message -->
+    <section class="message-cover">
+        <div class="message">
+            <p>This webpage not optimized for your device,<br> 
+                please open this webpage on your desktop machine.
+            </p>
+        </div>
+    </section>
+    <!-- end message -->
+
+
+    <!-- js -->
+    <script src="{% static './js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static './js/auth.js' %}"></script>
+
+    {% if messages %}
+    <script>
+
+        {% for message in messages %}
+            if ('{{message}}' === 'username'){
+                registerUsernameErrors()
+            } else {
+                registerEmailErrors()
+            }
+        {% endfor %}
+        
+    </script>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Radius</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="stylesheet" href="{% static './css/slick.css' %}">
+    <link rel="stylesheet" href="{% static './css/slick-theme.css' %}">
+    
+    <!-- favicons generics -->
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-192.png' %}" sizes="192x192">
+
+    <!-- favicon android -->
+    <link rel="shortcut icon" type="image/png" href="{% static './icon/favicon-196.png' %}" sizes="196x196">
+
+    <!-- favicons iso -->
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-167.png' %}" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-180.png' %}" sizes="180x180">
+
+</head>
+<body>
+
+    <!-- status code -->
+    <section class="status-and-home-cover">
+        <div class="status-and-home">
+            <div class="status">
+                <h1 class="code">500</h1>
+                <div class="error"><p>Server Error</p></div>
+            </div>
+            <div class="home"><a href="{% url 'base:home' %}"><button>Home</button></a></div>
+        </div>
+    </section>
+    <!-- end status code -->
+
+
+    <!-- message -->
+    <section class="message-cover">
+        <div class="message">
+            <p>This webpage not optimized for your device,<br> 
+                please open this webpage on your desktop machine.
+            </p>
+        </div>
+    </section>
+    <!-- end message -->
+
+
+    <!-- js -->
+    <script src="{% static './js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static './js/slick.js' %}"></script>
+    <script src="{% static './js/slider.js' %}"></script>
+    <script src="{% static './js/main.js' %}"></script>
+</body>
+</html>

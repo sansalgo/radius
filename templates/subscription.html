@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radius</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    
+    <!-- favicons generics -->
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-192.png' %}" sizes="192x192">
+
+    <!-- favicon android -->
+    <link rel="shortcut icon" type="image/png" href="{% static './icon/favicon-196.png' %}" sizes="196x196">
+
+    <!-- favicons iso -->
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-167.png' %}" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-180.png' %}" sizes="180x180">
+
+	<script src="https://js.stripe.com/v3/"></script>
+</head>
+
+
+<body>
+
+    <!-- payment form -->
+	<section class="payment-form-cover">
+		<form id="payment-form" method="post">
+			{% csrf_token %}
+			<div class="logo">
+                <span>
+                    <a href="{% url 'base:home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="154" height="83" viewBox="0 0 154 83">
+                        <rect id="footer-logo" width="142" height="71" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="12"/>
+                    </svg></a>
+                </span>                                 
+            </div>
+			<div class="label-and-price-cover">
+				<div class="label-and-price">
+					<div class="label" style="text-transform: capitalize;">{{ plan }}</div>
+					<div class="price">${{ price }}/Years</div>
+				</div>
+			</div>
+			<p class="hidden" id="priceId">{{ priceId }}</p>
+            <div class="card-number-cover">
+                <div id="card-number" class="field">
+                    <!-- Elements will create input elements here -->
+                </div>
+            </div>
+			<div class="expiry-and-cvc-cover">
+               <div class="expiry-and-cvc">
+                    <div id="card-expiry">
+                        <!-- Elements will create input elements here -->
+                    </div>
+                    <div id="card-cvc">
+                        <!-- Elements will create input elements here -->
+                    </div>
+               </div>
+            </div>
+			
+			<!-- We'll put the error messages in this element -->
+			<div id="card-element-errors" role="alert"></div>
+            <div class="submit-cover">
+                <button type="submit">Subscribe</button>
+            </div>
+		</form>
+	</section>
+    <!-- end payment form -->
+
+
+<!-- message -->
+<section class="message-cover">
+	<div class="message">
+		<p>This webpage not optimized for your device,<br> 
+			please open this webpage on your desktop machine.
+		</p>
+	</div>
+</section>
+<!-- end message -->
+
+
+<!-- js -->
+<script src="{% static './js/jquery-3.6.0.js' %}"></script>
+<script src="{% static './js/subscription.js' %}"></script>
+
+
+</body>
+</html>

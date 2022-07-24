@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    <!-- favicons generics -->
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-192.png' %}" sizes="192x192">
+
+    <!-- favicon android -->
+    <link rel="shortcut icon" type="image/png" href="{% static './icon/favicon-196.png' %}" sizes="196x196">
+
+    <!-- favicons iso -->
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-167.png' %}" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-180.png' %}" sizes="180x180">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

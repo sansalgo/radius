@@ -1,0 +1,413 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radius</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+
+    <!-- favicons generics -->
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-128.png' %}" sizes="128x128">
+    <link rel="icon" type="image/png" href="{% static './icon/favicon-192.png' %}" sizes="192x192">
+
+    <!-- favicon android -->
+    <link rel="shortcut icon" type="image/png" href="{% static './icon/favicon-196.png' %}" sizes="196x196">
+
+    <!-- favicons iso -->
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-152.png' %}" sizes="152x152">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-167.png' %}" sizes="167x167">
+    <link rel="apple-touch-icon" type="image/png" href="{% static './icon/favicon-180.png' %}" sizes="180x180">
+
+</head>
+<body>
+
+
+    <!-- preloader -->
+    <section id="preloader">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="154" height="83" viewBox="0 0 154 83">
+                <rect id="footer-logo" width="142" height="71" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="12"/>
+            </svg>                                            
+        </div>
+    </section>
+    <!-- end preloader -->
+
+
+    <!-- header -->
+    <header>
+        <div class="nav-bar">
+            <div class="left">
+                <div class="logo"><a href="{% url 'base:home' %}"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="60" viewBox="0 0 110 60">
+                    <rect id="header-logo" width="100" height="50" transform="translate(5 5)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="10"/>
+                  </svg></a>
+                </div>
+                <nav>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="{% url 'base:home' %}">Home</a></li>
+                            <li><a href="{% url 'base:movies' %}">Movies</a></li>
+                            <li><a href="{% url 'base:tv-shows' %}">TV Shows</a></li>
+                            <li><a style="cursor: pointer;">More</a></li>                
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="right">
+                <div class="search-box">
+                    <form class="search" action="{% url 'base:search' %}" method="get">
+                        <input type="text" name="query" placeholder="Search" autocomplete="off">
+                        <button class="search-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                                <g id="search-icon" fill="none" stroke="#dcdcdc" stroke-linejoin="round" stroke-width="8">
+                                <rect width="50" height="50" stroke="none"/>
+                                <rect x="4" y="4" width="42" height="42" fill="none"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="profile-icon"><a href="{% url 'user:profile' %}"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <g id="profile-icon" fill="none" stroke="#fff" stroke-width="10">
+                      <circle cx="35" cy="35" r="35" stroke="none"/>
+                      <circle cx="35" cy="35" r="30" fill="none"/>
+                    </g>
+                  </svg></a></div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+
+    <!-- movie title -->
+    <section class="video-title-cover" >
+        <div class="video-title">
+            <div class="title">
+                <h1>Profile</h1>
+            </div>
+        </div>
+    </section>
+    <!-- end movie title -->
+
+    <!-- profile bar -->
+    <div class="profile-bar-cover">
+        <div class="profile-bar">
+            <div class="left">
+                <div class="profile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+                    <g id="profile-icon" fill="none" stroke="#fff" stroke-width="10">
+                      <circle cx="35" cy="35" r="35" stroke="none"/>
+                      <circle cx="35" cy="35" r="30" fill="none"/>
+                    </g>
+                  </svg>
+                </div>
+                {% if profile.name == '' %}
+                    <div class="profile-name"><h6>{{profile.username}}</h6></div>
+                {% else %}
+                    <div class="profile-name"><h6>{{profile.name}}</h6></div>
+                {% endif %}
+            </div>
+            <div class="profile-menu center">
+                <input type="radio" name="profile-menu" id="profile" checked onclick="radioClick(this)">
+                <label for="profile">Profile</label>
+                <input type="radio" name="profile-menu" id="watchlist" onclick="radioClick(this)">
+                <label for="watchlist">Watchlist</label>
+                <input type="radio" name="profile-menu" id="settings" onclick="radioClick(this)">
+                <label for="settings">Settings</label>
+                <span class="selection"></span>
+            </div>
+            <div class="logout right">
+                <a href="{% url 'user:logout' %}"><button>Logout</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- end profile bar -->
+
+
+    <!-- history menu -->
+    <section class="history">
+        <div class="title-cover">
+            <div class="title"><h3>Plan</h3></div>
+        </div>
+        {% if plan == 'Null' %}
+        <div class="plan-cover">
+            <div class="plan">
+                <p>You don't have a subscription plan</p>
+                <a href="{% url 'plan:plans' %}"><button>Select a Plan</button></a>
+            </div>
+        </div>        
+        {% else %}
+        <div class="subscription">
+            <div id="plan-cover">
+                <div id="plan">
+                    <p>Plan Type:<br><span>{{ plan }}</span></p>
+                </div>
+                <div id="plan">
+                    <p>Period Start:<br><span>{{ created }}</span></p>
+                </div>
+                <div id="plan">
+                    <p>Period End:<br><span>{{ current_period_end }}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+
+        <div class="title-cover">
+            <div class="title"><h3>History</h3></div>
+        </div>
+        <div id="history-empty-cover">
+            <div class="empty">
+                <h4>No History</h4>
+            </div>
+
+        </div>
+        <div class="history-cover">
+            <div class="history-table">
+                
+                {% for d in date %}
+                <table>
+                    <thead>
+                        <th class="date">{{ d }}</th>
+                    </thead>
+                    <tbody>
+                        {% load filters %}                        
+                        {% for li in history|index:forloop.counter0 %}
+                        <tr>
+                            <td class="title">{{ li.movie.title }}</td>
+                            <td class="type">Movies</td>
+                            <td class="year">{{ li.movie.year }}</td>
+                            <td class="delete">
+                                <form class="clearHistoryForm" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="posterid" class="posterId" value="{{ li.id }}">
+                                    <input type="hidden" name="date" value="{{ d }}">
+                                    <button onclick="toClearHistory(this)">
+                                        <div class="close">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25.69" height="18.414" viewBox="0 0 25.69 18.414">
+                                                <g id="x-mark-1" transform="translate(0 -307)">
+                                                <path id="Close" d="M19.323.819,12.847,5.458,6.371.816A4.733,4.733,0,0,0,2.766.086a3.353,3.353,0,0,0-2.647,1.9A2.2,2.2,0,0,0,1.142,4.57L7.615,9.211,1.147,13.848a2.163,2.163,0,0,0,.042,3.726,4.81,4.81,0,0,0,5.2.032l6.461-4.646,6.471,4.64a4.737,4.737,0,0,0,3.6.727,3.357,3.357,0,0,0,2.648-1.9,2.2,2.2,0,0,0-1.015-2.583L18.094,9.213l6.468-4.636A2.163,2.163,0,0,0,24.521.851,4.81,4.81,0,0,0,19.323.819Z" transform="translate(0 307)" fill="none"/>
+                                                <path id="Close-2" data-name="Close" d="M13.851.819,9.209,5.458,4.567.816A2.653,2.653,0,1,0,.818,4.57l4.64,4.642L.822,13.848a2.657,2.657,0,0,0,3.756,3.758L9.209,12.96l4.638,4.64A2.655,2.655,0,1,0,17.6,13.846L12.97,9.213l4.636-4.636A2.657,2.657,0,0,0,13.851.819Z" transform="translate(4 307)" fill="#45A29E"/>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- end history menu -->
+
+
+    <!-- watchlist menu -->
+    <section class="watchlist">
+        <div class="type-cover">
+            <div class="type"><h3>Movies</h3></div>
+        </div>
+        <div id="watchlist-empty-cover">
+            <div class="empty">
+                <h4>No Movies</h4>
+            </div>
+
+        </div>
+        <div class="watchlist-cover">
+            <div class="watchlist-card">
+                {% if watchlist%}
+                    {% for list in watchlist %}
+                        <div class="card"><img src="{{list.poster.url}}" alt="{{list.movie.title}}">
+                            <div class="watch-and-remove-hover">
+                                <button class="watch" id="{{ list.movie.slug }}" onclick="toWatch(this)">Watch</button>
+                                <form method="POST" class="removeWatchlistForm">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="posterid" class="posterId" value="{{ list.id }}">
+                                    <button class="remove" onclick="toRemoveWatchlist(this)">Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- end watchlist menu -->
+
+
+    <!-- settings menu -->
+    <section class="settings">
+        <div class="settings-cover">
+            <div class="settings-bg">
+                <div class="profile-details-cover">
+                    <form class="profile-details" method="post" onsubmit="return profileDetails()" novalidate>
+                        {% csrf_token %}
+                        <div class="name">
+                            <!--<input type="text" name="name" placeholder="Name" autocomplete="off">-->
+                            {{form1.name}}
+                        </div>
+                        <div class="username">
+                            <!--<input type="text" name="username" placeholder="Username" autocomplete="off">-->
+                            {{form1.username}}
+                        </div>
+                        <div class="email">
+                            <!--<input type="email" name="email" placeholder="Email" autocomplete="off">-->
+                            {{form1.email}}
+                        </div>
+                        <div class="save"><button type="submit" name="save">Save</button></div>
+                    </form>
+                </div>
+                <hr>
+                <div class="change-password-cover">
+                    <form class="change-password" name="passwordChangeForm" method="post" onsubmit="return changePassword()" novalidate>
+                        {% csrf_token %}
+                        <div class="password0">
+                            <!--<input type="password" name="password0" placeholder="Old Password" autocomplete="off">-->
+                            {{ form2.old_password }}
+                            <div class="toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                    <circle id="toggle" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#50fff9" stroke-width="4"/>
+                                </svg>                      
+                            </div>
+                        </div>
+                        <div class="password1">
+                            <!--<input type="password" name="password1" placeholder="New Password" autocomplete="off">-->
+                            {{ form2.new_password1 }}
+                            <div class="toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                    <circle id="toggle" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#50fff9" stroke-width="4"/>
+                                  </svg>                      
+                            </div>
+                        </div>
+                        <div class="password2">
+                            <!--<input type="password" name="password2" placeholder="Confirm Password" autocomplete="off">-->
+                            {{ form2.new_password2 }}
+                            <div class="toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+                                    <circle id="toggle" cx="8.5" cy="8.5" r="8.5" transform="translate(2 2)" fill="none" stroke="#50fff9" stroke-width="4"/>
+                                  </svg>                      
+                            </div>
+                        </div>
+                        <div class="change"><button type="submit" name="change">Change</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end settings menu -->
+    
+    <!-- error area -->
+    <section class="error-cover">
+        <div class="error">
+            <p>
+
+            </p>
+        </div>
+    </section>
+    <!-- end error area -->
+
+
+    <!-- message -->
+    <section class="message-cover">
+        <div class="message">
+            <p>This webpage not optimized for your device,<br> 
+                please open this webpage on your desktop machine.
+            </p>
+        </div>
+    </section>
+    <!-- end message -->
+
+
+    <!-- footer -->
+    <footer>
+        <section>
+            <div class="icons">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="154" height="83" viewBox="0 0 154 83">
+                        <rect id="footer-logo" width="142" height="71" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="12"/>
+                    </svg>                                            
+                </div>
+                <div class="social-media">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.713" height="44.392" viewBox="0 0 20.713 44.392">
+                        <path id="facebook" d="M13.773,44.392v-22.2H19.9l.812-7.65h-6.94l.01-3.829c0-2,.19-3.064,3.055-3.064H20.67V0H14.541C7.18,0,4.589,3.711,4.589,9.952v4.593H0v7.65H4.589v22.2Z" fill="#fff"/>
+                    </svg>                      
+                    <svg id="instagram" xmlns="http://www.w3.org/2000/svg" width="44.395" height="44.392" viewBox="0 0 44.395 44.392">
+                        <path id="Combined-Shape" d="M22.2,44.392c-7.2,0-8.065-.028-10.942-.158A15.018,15.018,0,0,1,6.228,43.3a8.4,8.4,0,0,1-3.113-2.026,8.364,8.364,0,0,1-2.026-3.111,14.947,14.947,0,0,1-.933-5.026C.027,30.294,0,29.439,0,22.192s.027-8.1.156-10.938a14.98,14.98,0,0,1,.933-5.028A8.351,8.351,0,0,1,3.115,3.113,8.427,8.427,0,0,1,6.228,1.085,15.018,15.018,0,0,1,11.256.152C13.783.039,14.735.006,19.77,0c.233.007.483.007.7.007H22.2c7.288,0,8.136.027,10.942.154a14.986,14.986,0,0,1,5.028.933,8.364,8.364,0,0,1,3.111,2.026,8.427,8.427,0,0,1,2.028,3.113,15.059,15.059,0,0,1,.933,5.026c.129,2.842.156,3.7.156,10.94s-.027,8.1-.156,10.938a15.057,15.057,0,0,1-.933,5.026A8.98,8.98,0,0,1,38.168,43.3a14.91,14.91,0,0,1-5.028.935C30.265,44.364,29.4,44.392,22.2,44.392ZM22.2,8.3A13.9,13.9,0,1,0,36.1,22.205,13.921,13.921,0,0,0,22.2,8.3ZM36.652,4.5l-.006,0a2.343,2.343,0,1,0,.006,0Z" transform="translate(0)" fill="#fff"/>
+                        <path id="Shape" d="M9.026,0A9.026,9.026,0,1,1,0,9.026,9.026,9.026,0,0,1,9.026,0Z" transform="translate(13.172 13.179)" fill="#fff"/>
+                    </svg>                      
+                    <svg xmlns="http://www.w3.org/2000/svg" width="53.717" height="44.392" viewBox="0 0 53.717 44.392">
+                        <path id="twitter" d="M26.083,11.809l.116,1.92-1.941-.235A31.567,31.567,0,0,1,5.783,4.4L3.222,1.856l-.66,1.881a11.309,11.309,0,0,0,2.406,11.6c1.553,1.646,1.2,1.881-1.475.9a4.577,4.577,0,0,0-1.824-.431c-.272.274.66,3.84,1.4,5.251a12.534,12.534,0,0,0,5.317,5.016l1.9.9-2.251.039c-2.174,0-2.251.039-2.018.862.776,2.547,3.843,5.251,7.258,6.426l2.406.823-2.1,1.254a21.853,21.853,0,0,1-10.4,2.9A11.493,11.493,0,0,0,0,39.591c0,.392,4.735,2.586,7.491,3.448a32.786,32.786,0,0,0,25.462-2.9,34.075,34.075,0,0,0,12.925-15.2A40.418,40.418,0,0,0,48.517,13.18c0-1.8.116-2.038,2.29-4.193A25.588,25.588,0,0,0,53.524,5.97c.388-.745.349-.745-1.63-.078-3.3,1.176-3.765,1.019-2.135-.745C50.962,3.894,52.4,1.621,52.4.955c0-.118-.582.078-1.242.431a21.654,21.654,0,0,1-3.416,1.332l-2.1.666-1.9-1.293a15.8,15.8,0,0,0-3.3-1.724,13.26,13.26,0,0,0-6.792.157A11.219,11.219,0,0,0,26.083,11.809Z" fill="#fff"/>
+                    </svg>                
+                </div>
+            </div>
+            <div class="vertical-line"><hr></div>
+            <div class="site-map">
+                <div class="map">
+                    <div class="browse">
+                        <li>Browse</li>
+                        <li><a href="{% url 'base:movies' %}">Movies</a></li>
+                        <li><a href="{% url 'base:tv-shows' %}">TV Shows</a></li>
+                    </div>
+                    <div class="my-account">
+                        <li>My Account</li>
+                        <li><a class="watchlist-checked" href="{% url 'user:profile' %}">Watchlist</a></li>
+                        <li><a class="settings-checked" href="{% url 'user:profile' %}">Settings</a></li>
+                    </div>
+                    <div class="information">
+                        <li>Information</li>
+                        <li><a style="cursor: pointer;">About Us</a></li>
+                        <li><a style="cursor: pointer;">Contact Us</a></li>
+                    </div>
+                    <div class="privacy-and-terms">
+                        <li>Privacy & Terms</li>
+                        <li><a style="cursor: pointer;">Privacy Policy</a></li>
+                        <li><a style="cursor: pointer;">Terms of Use</a></li>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-line"><hr></div>
+            <div class="copyright">
+                <p>Copyright © 2021 Radius.<br>
+                    All Rights Reserved.
+                </p>
+            </div>
+            
+        </section>
+    </footer>
+    <!-- end footer -->
+
+
+    <!-- js -->
+    <script src="{% static './js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static './js/main.js' %}"></script>
+    <script src="{% static './js/profile.js' %}"></script>
+    <script src="{% static './js/auth.js' %}"></script>
+
+    {% if messages %}
+    <script>
+
+        {% for message in messages %}
+            if ('{{message}}' === 'username'){
+                profileUsernameError()
+            } else if ('{{message}}' === 'old_password'){
+                oldPasswordError()
+            } else {
+                profileEmailError()
+            }
+        {% endfor %}
+
+    </script>
+    {% endif %}
+    
+    
+</body>
+</html>
