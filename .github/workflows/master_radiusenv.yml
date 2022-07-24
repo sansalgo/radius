@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'radiusenv'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61C27BB11D4941BCB32F5D5538940AC7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DCCA54595F894CA7AB03551356A69EA9 }}
