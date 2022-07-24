@@ -12,7 +12,7 @@ stripe.api_key = "sk_test_51Ks0jRCzX1BKhEVgrT6Tf7Z4eA3TyKrORgZWlIruIYMzW99CbOEJt
 
 # Create your views here.
 
-# find user is subscribed or not
+# find out if the user is subscribed or not
 def isSubscribed(request):
     if Subscription.objects.filter(user = request.user).exists():
             subscriptionUser = Subscription.objects.get(user = request.user)
