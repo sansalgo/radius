@@ -7,8 +7,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from .models import Plan, Subscription
 
+from django.conf import settings
+
 import stripe
-stripe.api_key = "sk_test_51Ks0jRCzX1BKhEVgrT6Tf7Z4eA3TyKrORgZWlIruIYMzW99CbOEJttUzKgNpwmgx2ABFmHTj8hwBeJlwtVJXroNI00AExA6O0q"
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 
