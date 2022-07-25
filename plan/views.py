@@ -16,9 +16,12 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # find out if the user is subscribed or not
 def isSubscribed(request):
-    if Subscription.objects.filter(user = request.user).exists():
-            subscriptionUser = Subscription.objects.get(user = request.user)
-            plan = subscriptionUser.plan
+    if request.user.is_authenticated:
+        if Subscription.objects.filter(user = request.user).exists():
+                subscriptionUser = Subscription.objects.get(user = request.user)
+                plan = subscriptionUser.plan
+        else: plan = 'Null'
+    else: plan = 'Null'
     return True if str(plan) != 'Null' else False
 
 
