@@ -1,0 +1,75 @@
+$breakpoints: (
+    "o" : 1920px,
+    "l" : 1440px,
+    "m" : 1366px,
+    "s" : 1024px,
+    "below" : 1024px
+);
+
+@mixin o {
+    @media (min-width: map-get($breakpoints, "o")){
+        @content;
+    }
+}
+@mixin l {
+    @media (max-width: map-get($breakpoints, "l")){
+        @content;
+    }
+}
+@mixin m {
+    @media (max-width: map-get($breakpoints, "m")){
+        @content;
+    }
+}
+@mixin s {
+    @media (max-width: map-get($breakpoints, "s")){
+        @content;
+    }
+}
+@mixin below {
+    @media (min-width: map-get($breakpoints, "below")){
+        @content;
+    }
+}
+
+html{
+    body{
+        /* body */
+        margin: 0;
+        padding: 0;
+        font-family: Poppins;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        background-image: linear-gradient(45deg, #0B0C10, #1D252F);
+        user-select: none;
+        @include o {
+            zoom: 100%;
+        }
+        @include l {
+            zoom: 74.3%;
+        }
+        @include m {
+            zoom: 70.3%;
+        }
+        @include s {
+            zoom: 53.3%;
+        }
+    }
+    body::-webkit-scrollbar{
+        /*-- scrollbar --*/
+        width: 24px;
+    }
+    body::-webkit-scrollbar-track{
+        /*-- scrollbar track --*/
+        background-image: linear-gradient(45deg, #15171E, #27323F);
+    }
+    body::-webkit-scrollbar-thumb{
+        /*-- scrollbar thumb --*/
+        background: #45A29E;
+        border-radius: 2.5px;
+    }
+    body::-webkit-scrollbar-thumb:hover{
+        /*-- scrollbar thumb - hover --*/
+        background: #69FCF2;
+    }
+}

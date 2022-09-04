@@ -1,0 +1,165 @@
+.filter-cover{
+    /* filter space */
+    display: flex;
+    justify-content: center;
+    .filter{
+        width: 1640px;
+        height: 560px;
+        border-radius: 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background-color: #1D252F;
+        .genres, .sort{
+            width: 1440px;
+            margin: 50px 0px 0px 50px;
+            .title{
+                font-size: 35px;
+                font-weight: 500;
+                margin-bottom: 15px;
+                color: #45A29E;
+            }
+            input{
+                display: none;
+            }
+            input:checked + label div{
+                color: #0B0C10;
+                border: #45A29E solid 4px;
+                background-color: #45A29E;
+            }
+            label{
+                display: inline-block;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                div{
+                    font-size: 25px;
+                    font-weight: 500;
+                    color: #45A29E;
+                    padding: 4px 16px;
+                    border: #45A29E solid 4px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .sort{
+            margin-top: 0px;
+        }
+        .clear-and-apply{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                font-family: Poppins;
+                font-size: 30px;
+                font-weight: 500;
+                color: #0B0C10;
+                padding: 8px 20px;
+                border: unset;
+                background-color: #45A29E;
+                margin-right: 30px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            :hover{
+                background-color: #69FCF2;
+            }
+            :last-child{
+                margin-right: 50px;
+            }
+        }
+    }
+}
+
+
+.movies{
+    /* movies under filters */
+    .poster-cover{
+        display: flex;
+        justify-content: center;
+        .poster-card{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 28px;
+            width: 1640px;
+            justify-content: flex-start;
+            .card{
+                position: relative;
+                display: flex;
+                margin-bottom: 50px;
+                overflow: hidden;
+                border-radius: 20px;
+                cursor: pointer;
+                img{
+                    width: 250px;
+                    height: 333px;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+
+#coming-soon{
+    /* coming soon area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1640px;
+        height: 100vh;
+        h2{
+            font-size: 60px;
+            font-weight: 600;
+            color: #45A29E;
+        }
+
+    }
+}
+
+
+.pagination-cover{
+    /* pagination */
+    display: flex;
+    justify-content: center;
+    .pagination{
+        display: flex;
+        width: 654.51px;
+        height: 95px;
+        margin-top: 50px;
+        background-color: #1F222E;
+        border-radius: 10px;
+        justify-content: space-evenly;
+        align-items: center;
+        a{
+            display: flex;
+            width: 65px;
+            height: 65px;
+            font-size: 35px;
+            font-weight: 600;
+            color: #45A29E;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            svg{
+                #left-arrow, #right-arrow{
+                    fill: #45A29E;
+                }
+            }
+        }
+        .active{
+            color: #0B0C10;
+            background-color: #45A29E;
+            border-radius: 5px;
+        }
+        .deactive{
+            opacity: 50%;
+            pointer-events: none;
+        }
+    }
+}

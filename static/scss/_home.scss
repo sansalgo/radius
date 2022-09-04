@@ -1,0 +1,389 @@
+.slider-cover{
+    /*-- cover slider --*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    .slider{                
+        button{
+            all: unset;
+            height: 45.256px;
+        }
+        position: relative;
+        #prev-arrow{
+            position: absolute;
+            top: 241.372px;
+            left: -115px;
+            z-index: 1;
+            cursor: pointer;
+            visibility: hidden;
+            svg{
+                #left-arrow{
+                    fill: #45A29E;
+                }
+            }
+            svg:hover{
+                #left-arrow{
+                    fill: #69FCF2;
+                }
+            }
+        }
+        #next-arrow{
+            position: absolute;
+            top: 241.372px;
+            right: -115px;
+            z-index: 1;
+            cursor: pointer;
+            visibility: hidden;
+            svg{
+                #right-arrow{
+                    fill: #45A29E;
+                }
+            }
+            svg:hover{
+                #right-arrow{
+                    fill: #69FCF2;
+                }
+            }
+        }
+        .center-mode{
+            width: 1640px;
+            .slick-slide{
+                margin-right: 50px;
+            }
+            .slick-list{
+                overflow: visible;
+            }
+            
+            div{
+                display: flex;
+                a{
+                    display: flex;
+                    img{
+                        border-radius: 20px;
+                    }
+                }
+            }  
+        }
+    }
+}
+
+
+.slider:hover{
+    /*-- cover slider arrows --*/
+    #prev-arrow{
+        visibility: visible;
+    }
+    #next-arrow{
+        visibility: visible;
+    }
+}
+
+
+#slider-cover{
+    /*-- poster slider --*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #slider{
+        margin-top: 50px;
+        button{
+            all: unset;
+            height: 45.256px;
+        }
+        position: relative;
+        width: 1920px;
+        .slider-title{
+            margin-left: 140px;
+            font-weight: 600;
+            font-size: 40px;
+            color: #45A29E;
+        }
+        .prev-arrow{
+            position: absolute;
+            left: 70px;
+            top: 257.375px;
+            svg{
+                cursor: pointer;
+                #left-arrow{
+                    fill: #45A29E;
+                }
+            }
+            svg:hover{
+                #left-arrow{
+                    fill: #69FCF2;
+                }
+            }
+        }
+        .next-arrow{
+            position: absolute;
+            top: 257.375px;
+            right: 70px;
+            svg{
+                cursor: pointer;
+                #right-arrow{
+                    fill: #45A29E;
+                }
+            }
+            svg:hover{
+                #right-arrow{
+                    fill: #69FCF2;
+                }
+            }
+        }
+        .slick-disabled{
+            opacity: 50%;
+            pointer-events: none;
+        }
+        .multiple-items-cover{
+            display: flex;
+            justify-content: center;
+            width: 1640px;
+            margin: 50px 140px 0px 140px;
+            .multiple-items{
+                min-width: 1668px;
+                height: auto;
+                .slick-current{
+                    margin-left: 0px;
+                }
+                div{
+                    display: flex;
+                    a{
+                        display: flex;
+                        margin: 0 14px 0 14px;
+                        img{
+                            width: 250px;
+                            height: 333px;
+                            border-radius: 20px;
+                        }
+    
+                    }
+    
+                }
+                
+            }
+
+        }
+        
+        #prev-arrow-7{
+            position: absolute;
+            left: 71px;
+            top: 234.5525px;
+        }
+        #next-arrow-7{
+            position: absolute;
+            top: 234.5525px;
+            right: 71px;
+        }
+        #multiple-items-7{
+            min-width: 1640px;
+            height: 294.759px;
+            margin: 50px 140px 0px 140px;
+            .slick-slide{
+                margin-right: 33px;
+            }
+            div{
+                position: relative;
+                span{
+                    position: absolute;
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #45A29E;
+                    left: 30px;
+                    bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+.plan-title{
+    /*-- plan title --*/
+    display: flex;
+    justify-content: center;
+    div{
+        width: 1640px;
+       
+        font-size: 60px;
+        font-weight: 600;
+        color: #45A29E;
+        margin-top: 50px;
+    }
+}
+
+.plans{
+    /*-- plans --*/
+    display: flex;
+    justify-content: center;
+    
+    .options{
+        display: flex;
+        width: 1640px;
+        margin-top: 50px;
+        .regular, .standard, .premium{
+            width: 527px;
+            height: auto;
+            align-items: center;
+            border-radius: 20px;
+            background-color: #15171E;
+            .option-title{
+                text-align: center;
+                font-size: 45px;
+                font-weight: 500;
+                color: #45A29E;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            hr{
+                width: 435px;
+                height: 6px;
+                margin: 0px auto;
+                border: 0px;
+                border-radius: 50px;
+                background-color: #45A29E;        
+            }
+            .regular-features{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                ul{
+                    width: 400px;
+                    padding-inline-start: 25.687px;
+                    text-align: left;
+                    margin: 0px;
+                    li{
+
+                        font-size: 30px;
+                        font-weight: 500;
+                        color: #45A29E;
+                        padding-left: 20px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                    }
+                    
+                    
+                }
+                    ul li::marker{
+                        content: url(../img/tick-mark-1.svg);
+                        
+                    }
+                    ul li:nth-child(5)::marker{
+                        content: url(../img/x-mark-1.svg);
+                    }
+                
+            }
+            #price{
+                text-align: center;
+                margin-top: 30px;
+                font-size: 65px;
+                font-weight: 600;
+                color: #45A29E;
+            }
+            .select-plan{
+                display: flex;
+                justify-content: center;
+                a{
+                    all: unset;
+                    width: 279px;
+                    height: 94px;
+                    margin: 50px 0px 50px 0px;
+                    button{
+                        width: 279px;
+                        height: 94px;
+                        border: none;
+                        margin: 0px 0px 50px 0px;
+                        padding: 0px;
+                        border-radius: 10px;
+                        font-family: Poppins;
+                        font-size: 35px;
+                        font-weight: 500;
+                        color: #45A29E;
+                        background-color: #0B0C10;
+                        cursor: pointer;
+                    }
+                    button:hover{
+                        color: #0B0C10;
+                        background-color: #45A29E;
+                    }
+                }
+            }
+        }
+        .standard{
+            margin-right: 29.995px;
+            margin-left: 29.995px;
+            background-color: #45A29E;
+            .option-title{
+                color: #0B0C10;
+            }
+            hr{
+                background-color: #0B0C10;
+            }
+            .standard-features{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                ul{
+                    width: 400px;
+                    padding-inline-start: 25.687px;
+                    text-align: left;
+                    margin: 0px;
+                    li{
+
+                        font-size: 30px;
+                        font-weight: 500;
+                        color: #0B0C10;
+                        padding-left: 20px;
+                        margin-bottom: 20px;
+                        text-align: left;                              
+                    }
+                    
+                    
+                }
+                ul li::marker{
+                    content: url(../img/tick-mark-2.svg);
+                }
+            }
+            #price{
+                color: #0B0C10;
+            }
+            .select-plan{
+                a{
+                    button:hover{
+                        color: #69FCF2;
+                        background-color: #15171E;
+                    }
+                }
+            }
+        }
+        .premium{
+            .premium-features{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                ul{
+                    width: 400px;
+                    padding-inline-start: 25.687px;
+                    text-align: left;
+                    margin: 0px;
+                    li{
+                        font-size: 30px;
+                        font-weight: 500;
+                        color: #45A29E;
+                        padding-left: 20px;
+                        margin-bottom: 20px;
+                        text-align: left;
+                    }
+                    
+                    
+                }
+                ul li::marker{
+                    content: url(../img/tick-mark-1.svg);
+                }
+            }
+
+        }
+    
+    }    
+
+}

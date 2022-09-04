@@ -1,0 +1,635 @@
+.auth-cover{
+    /* authentication */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #0B0C10, #1D252F);
+    .auth-1, .auth-2, .auth-3, .auth-4, .auth-5{
+        width: 600px;
+        height: auto;
+        background-color: #15171E;
+        border-radius: 20px;
+        .logo{
+            display: flex;
+            margin: 50px;
+            width: 600-100px;
+            justify-content: space-between;
+            span{
+                a{
+                    all: unset;
+                    display: flex;
+                    height: 83px;
+                    svg{
+                        cursor: pointer;
+                        #footer-logo{
+                            stroke: #45A29E;
+                        }
+                    }
+                    svg:hover{
+                        #footer-logo{
+                            stroke: #69FCF2;
+                        }
+                    }
+                }
+                
+            }
+        }
+        .username, .email, .password1, .password2, .name{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            input{
+                all: unset;
+                width: 420px;
+                height: 80px;
+                border-radius: 10px;
+                background-color: #27323F;
+                padding-left: 40px;
+                padding-right: 40px;
+                font-family: Poppins;
+                font-size: 30px;
+                font-weight: 600;
+                color: #45A29E;
+                caret-color: #69FCF2;
+            }
+            ::-webkit-input-placeholder{
+                color: #45A29E;
+            }
+            ::-webkit-outer-spin-button, ::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            ::selection{
+                color: #0B0C10;
+                background-color: #45A29E;
+            }
+        }
+        .checkbox{
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-left: 50px;
+            
+            input{
+                width: 30px;
+                height: 30px;
+                
+            }
+            input[type="checkbox"]{
+                display: none;
+            }
+            label{
+                font-size: 30px;
+                font-weight: 600;
+                margin-left: 30+15px;
+                color: #45A29E;
+                cursor: pointer;
+            }
+            label::before{
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: 30px;
+                top: 7.08px;
+                left: 0px;
+                margin-right: 15px;
+                border-radius: 5px;
+                background-color: #27323F;
+                cursor: pointer;
+            }
+            input[type="checkbox"]:checked + label::before{
+                content: url(../img/tick-mark-1.svg);
+                top: 7.08px;
+                left: 0px;
+            }
+        }
+        button{
+            all: unset;
+            width: 500px;
+            height: 80px;
+            border-radius: 10px;
+            background-color: #45A29E;
+            font-family: Poppins;
+            font-size: 30px;
+            font-weight: 600;
+            color: #0B0C10;
+            text-align: center;
+            cursor: pointer;
+            
+        }
+        button:hover{
+            background-color: #69FCF2;
+        }
+        hr{
+            width: 400px;
+            height: 4px;
+            border: unset;
+            margin-top: 40px;
+            border-radius: 10px;
+            background-color: #45A29E;
+        }
+        .login, .fp, .reg, .log{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .reg, .log{
+            margin-bottom: 40px;
+        }
+        a, .reg, .log{
+            text-decoration: unset;
+            font-size: 30px;
+            font-weight: 600;
+            color: #45A29E;
+            
+        }
+        a:hover{
+            color: #69FCF2;
+        }
+    }
+    .auth-1{
+        .username{
+            position: relative;
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(340deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        .password1{
+            position: relative;
+            input{
+                width: 400px;
+                padding-right: 60px;
+            }
+            .toggle{
+                display: flex;
+                position: absolute;
+                top: 29.5px;
+                left: 505px;
+                svg{
+                    cursor: pointer;
+                    #toggle{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #toggle{
+                        stroke: #69FCF2;
+                    }
+                }
+                
+            }
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(160deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                top: 422px;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+    }
+    .auth-2{
+        .username{
+            position: relative;
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(340deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        .email{
+            position: relative;
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(160deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        
+        .password1, .password2{
+            .arrow{
+                display: none;
+                position: absolute;
+                top: 520px;
+                right: 565px;
+                transform: rotate(15deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                top: 422px;
+                left: 215px;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        .password1{
+            position: relative;
+            input{
+                width: 360px;
+                padding-right: 100px;
+            }
+            .toggle{
+                display: flex;
+                position: absolute;
+                top: 29.5px;
+                left: 465px;
+                svg{
+                    cursor: pointer;
+                    #toggle{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #toggle{
+                        stroke: #69FCF2;
+                    }
+                }
+                
+            }
+            .right-back{
+                display: flex;
+                position: absolute;
+                left: 500px;
+                bottom: 29.066px;
+                transform: rotate(180deg);
+                svg{
+                    cursor: pointer;
+                    #back{
+                        fill: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #back{
+                        fill: #69FCF2;
+                    }
+                }
+            }
+        }
+        .password2{
+            display: none;
+            position: relative;
+            input{
+                width: 360px;
+                padding-right: 100px;
+            }
+            .left-back{
+                display: flex;
+                position: absolute;
+                top: 29.066px;
+                left: 465px;
+                svg{
+                    cursor: pointer;
+                    #back{
+                        fill: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #back{
+                        fill: #69FCF2;
+                    }
+                }
+            }
+            .toggle{
+                display: flex;
+                position: absolute;
+                top: 29.5px;
+                left: 504px;
+                svg{
+                    cursor: pointer;
+                    #toggle{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #toggle{
+                        stroke: #69FCF2;
+                    }
+                }
+                
+            }                
+        }
+        .checkbox{
+            .arrow{
+                display: none;
+                position: absolute;
+                top: 35px;
+                right: 540px;
+                z-index: 1;
+                transform: rotate(160deg);
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+    }
+    .auth-3, .auth-4{
+        .email{
+            position: relative;
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(340deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        .back-to{
+            display: flex;
+            justify-content: center;
+            .back-to-cover{
+                width: 500px;
+                display: inline-flex;
+                justify-content: space-between;
+                a{
+                    all: unset;
+                    button{
+                        width: 242.5px;
+                        margin-bottom: 40px;
+                    }
+                }
+                button{
+                    width: 242.5px;
+                    margin-bottom: 40px;
+                }
+            }
+            
+        }
+    }
+    .auth-5{
+        .password1{
+            position: relative;
+            input{
+                width: 400px;
+                padding-right: 60px;
+            }
+            .toggle{
+                display: flex;
+                position: absolute;
+                top: 29.5px;
+                left: 505px;
+                svg{
+                    cursor: pointer;
+                    #toggle{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #toggle{
+                        stroke: #69FCF2;
+                    }
+                }
+                
+            }
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(340deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+        }
+        .password2{
+            position: relative;
+            input{
+                width: 400px;
+                padding-right: 60px;
+            }
+            .toggle{
+                display: flex;
+                position: absolute;
+                top: 29.5px;
+                left: 505px;
+                svg{
+                    cursor: pointer;
+                    #toggle{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #toggle{
+                        stroke: #69FCF2;
+                    }
+                }
+                
+            }
+            .arrow{
+                display: none;
+                position: absolute;
+                transform: rotate(340deg);
+                svg{
+                    #arrow{
+                        fill: #69FCF2;
+                        
+                    }
+                }
+            }
+            .message{
+                display: none;
+                position: absolute;
+                font-size: 25px;
+                font-weight: 500;
+                color: #69FCF2;
+            }
+
+        }
+        button{
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+#message-cover{
+    /* messages */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #0B0C10, #1D252F);
+
+    #message1, #message2{
+        width: 1440px;
+        height: auto;
+        padding: 40px;
+        background-color: #15171E;
+        border-radius: 20px;
+        h1{
+            font-size: 60px;
+            font-weight: 600;
+            margin: 0px;
+            color: #45A29E;
+        }
+        p{
+            margin: 0px;
+            margin-top: 20px;
+            font-size: 30px;
+            font-weight: 600;
+            color: #45A29E;
+        }
+        .left-back-cover{
+            a{
+                all: unset;
+                display: flex;
+                justify-content: flex-start;
+                .left-back{
+                    display: inline-block;
+                    width: 25.689px;
+                    height: 21.868px;
+                    margin-top: 20px;
+                    padding: 15px;
+                    border-radius: 10px;
+                    box-shadow: inset 0 0 0 4px #45A29E;
+                    cursor: pointer;
+                    svg{
+                        cursor: pointer;
+                        #back{
+                            fill: #45A29E;
+                        }
+                    }
+                }
+                .left-back:hover{
+                    background-color: #45A29E;
+                    svg{
+                        #back{
+                            fill: #0B0C10;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    #message2{
+        width: 1111px;
+        .right-back-cover{
+            display: flex;
+            justify-content: flex-end;
+            a{
+                all: unset;
+                .right-back{
+                    display: inline-block;
+                    width: 25.689px;
+                    height: 21.868px;
+                    margin-top: 20px;
+                    padding: 15px;
+                    border-radius: 10px;
+                    transform: rotate(180deg);
+                    box-shadow: inset 0 0 0 4px #45A29E;
+                    cursor: pointer;
+                    svg{
+                        cursor: pointer;
+                        #back{
+                            fill: #45A29E;
+                        }
+                    }
+                }
+                .right-back:hover{
+                    background-color: #45A29E;
+                    svg{
+                        #back{
+                            fill: #0B0C10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

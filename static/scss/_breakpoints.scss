@@ -1,0 +1,33 @@
+$breakpoints: (
+    "o" : 1920px,
+    "l" : 1440px,
+    "m" : 1366px,
+    "s" : 1024px,
+    "below" : 1024px
+);
+
+@mixin o {
+    @media (min-width: map-get($breakpoints, "o")){
+        @content;
+    }
+}
+@mixin l {
+    @media (max-width: map-get($breakpoints, "l")){
+        @content;
+    }
+}
+@mixin m {
+    @media (max-width: map-get($breakpoints, "m")){
+        @content;
+    }
+}
+@mixin s {
+    @media (max-width: map-get($breakpoints, "s")){
+        @content;
+    }
+}
+@mixin below {
+    @media (min-width: map-get($breakpoints, "below")){
+        @content;
+    }
+}

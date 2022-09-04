@@ -164,17 +164,17 @@ STRIPE_PUBLISHABLE_KEY = os.environ['STRIPE_PUBLISHABLE_KEY']
 STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
 
 
-# azure storage
-DEFAULT_FILE_STORAGE = 'radius.azure.AzureMediaStorage'
-STATICFILES_STORAGE = 'radius.azure.AzureStaticStorage'
+# # azure storage
+# DEFAULT_FILE_STORAGE = 'radius.azure.AzureMediaStorage'
+# STATICFILES_STORAGE = 'radius.azure.AzureStaticStorage'
 
-STATIC_LOCATION = "static"
-MEDIA_LOCATION = "media"
+# STATIC_LOCATION = "static"
+# MEDIA_LOCATION = "media"
 
-AZURE_ACCOUNT_NAME = "radiusstorage"
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+# AZURE_ACCOUNT_NAME = "radiusstorage"
+# AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+# STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+# MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
 # trusted origins
 CSRF_TRUSTED_ORIGINS = ['https://radiusenv.azurewebsites.net']

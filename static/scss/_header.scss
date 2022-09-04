@@ -1,0 +1,171 @@
+header{
+    /* header */
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    
+    .nav-bar{
+        /* navbar */
+        min-width: 1920px;
+        height: 125px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            /* navbar - left */
+            display: inline-flex;
+            .logo{
+                display: flex;
+                align-items: center; 
+                a{
+                    all: unset;
+                    height: 60px;
+                } 
+                                
+                svg{
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    cursor: pointer;
+
+                    #header-logo{
+                        stroke: #45A29E;
+                    }
+                }
+                svg:hover{
+                    #header-logo{
+                        stroke: #69FCF2;
+                    }
+                }
+            }
+            nav{
+                display: flex;
+                align-items: center;
+                
+                .menu{
+                    min-width: 650px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    ul{
+                        list-style: none;
+                        margin: 0px;
+                        padding: 0px;
+                        .active{
+                            a{
+                                color: #69FCF2;
+                            }
+                        }
+                        li{
+                            display: inline-block;
+                            font-size: 35px;
+                            font-weight: 600;
+                            margin-right: 50px;                                
+                            a{
+                                display: inline-block;
+                                text-decoration: none;
+                                color: #45A29E;
+                            }
+                            
+                        }
+
+                        li:last-child{
+                            margin-right: 0px;
+                        }
+                        li:hover{
+                            a{
+                                color: #69FCF2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right{
+            /* navbar - right */
+            display: inline-flex;
+            .search-box{
+                position: relative;
+                display: flex;
+                align-items: center;
+                .search{
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    
+                    ::-webkit-input-placeholder{
+                        color: #45A29E;
+                    }
+                    ::selection{
+                        color: #0B0C10;
+                        background-color: #45A29E;
+                    }
+                    
+                    input{
+                        width: 311px;
+                        height: 75px;
+                        border-radius: 10px;
+                        border: unset;
+                        outline: none;
+                        padding-left: 36px;
+                        padding-right: 76px;
+                        font-family: Poppins;
+                        font-weight: 500;
+                        font-size: 30px;
+                        background-color: #27323F;
+                        color: #45A29E;
+                        caret-color: #69FCF2;               
+                    }
+                    .search-icon{
+                        all: unset;
+                        
+                        svg{
+                            position: absolute;
+                            top: 13.5px;
+                            right: 13.5px;
+                            cursor: pointer;
+                            #search-icon{
+                                stroke: #45A29E;
+                            }
+                        }
+                        svg:hover{
+                            #search-icon{
+                                stroke: #69FCF2;
+                            }
+                        }
+                    }
+                }
+            }
+            .login, .profile-icon{
+                display: flex;
+                align-items: center;
+                margin-left: 50px;
+                margin-right: 50px;
+                a{
+                    text-decoration: none;
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #45A29E;
+                    svg{
+                        #profile-icon{
+                            stroke: #45A29E;
+                        }
+                    }
+                }
+                a:hover{
+                    color: #69FCF2;
+                    svg{
+                        #profile-icon{
+                            stroke: #69FCF2;
+                        }
+                    }
+                }
+            }
+            .profile-icon{
+                a{
+                    height: 70px;
+                }
+            }
+        }
+    }
+}

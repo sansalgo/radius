@@ -1,0 +1,59 @@
+.status-and-home-cover{
+    /* response error - 404/500/403 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #0B0C10, #1D252F);
+    .status-and-home{
+        .status{
+            position: relative;
+            .code{
+                all:unset;
+                font-size: 300px;
+                font-weight: 600;
+                color: #45A29E;
+            }
+            .error{
+                display: flex;
+                justify-content: center;
+                p{
+                    all: unset;
+                    position: absolute;
+                    bottom: 0px;
+                    font-size: 70px;
+                    font-weight: 600;
+                    color: #45A29E;
+                }
+            }
+        }
+        .home{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            a{
+                all: unset;
+                display: flex;
+                button{
+                    all: unset;
+                    width: 200px;
+                    height: 80px;
+                    text-align: center;
+                    font-size: 40px;
+                    font-weight: 600;
+                    color: #0B0C10;
+                    background-color: #45A29E;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+                button:hover{
+                    background-color: #69FCF2;
+                }
+            }
+        }
+    }
+}

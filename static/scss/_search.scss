@@ -1,0 +1,46 @@
+.search{
+    /* search space */
+    .result-for-cover{
+        display: flex;
+        justify-content: center;
+        .result-for{
+            width: 1640px;
+            h3{
+                font-size: 45px;
+                font-weight: 600;
+                color: #45A29E;
+                margin: 0px;
+                padding: 0px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .poster-cover{
+        display: flex;
+        justify-content: center;
+        .poster-card{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 28px;
+            width: 1640px;
+            justify-content: flex-start;
+            .card{
+                position: relative;
+                display: flex;
+                margin-bottom: 50px;
+                overflow: hidden;
+                border-radius: 20px;
+                cursor: pointer;
+                img{
+                    width: 250px;
+                    height: 333px;
+                    object-fit: cover;
+                    border-radius: 20px;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
