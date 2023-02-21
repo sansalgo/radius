@@ -1,6 +1,6 @@
 # Radius
 
-## Subscription based VOD system / OTT
+## Subscription based VOD system / over-the-top (OTT) media service
 
 #### What is this? <br/>
 
