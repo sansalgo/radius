@@ -6,7 +6,7 @@ Radius is a movie streaming website built with Python, Django, and MySQL. It's a
 
 To use the website, navigate to the live demo by clicking on the following link:
 
-[LIVE DEMO](http://radiusenv.pythonanywhere.com/)
+[LIVE DEMO](https://radiusenv.pythonanywhere.com/)
 
 The live demo allows users to create an account, browse the available movies and TV shows, and stream content. The payment gateway is also active, allowing users to securely purchase access to premium content.
 
